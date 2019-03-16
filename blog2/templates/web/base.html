@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    <meta name="keywords" content="茂茂个人博客" />
+    <meta name="description" content="茂茂的个人博客，提供免费的python相关学习经验" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block css %}
+    {% endblock %}
+
+
+    {% block js %}
+    {% endblock %}
+</head>
+<body style="background-image: url(../../static/web/images/image.jpg);">
+    {% block header %}
+    {% endblock %}
+
+<article >
+    {% block aside %}
+    {% endblock %}
+
+    {% block main %}
+    {% endblock %}
+
+</article>
+<footer>
+    <p>Design by 茂茂 </p>
+</footer>
+    <a href="#" class="cd-top">Top</a>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% extends 'web/base_main.html' %}
+
+{% block js %}
+    <script type="text/javascript" src="js/hc-sticky.js"></script>
+{% endblock %}
+
+{% block main %}
+    <main class="r_box">
+        {% for article in articles %}
+            <li>
+                <h3><a href="{{ url_for('web.article',id=article.id) }}">{{ article.title }}</a></h3>
+                <p>{{ article.desc }}</p>
+            </li>
+        {% endfor %}
+
+
+    </main>
+{% endblock %}

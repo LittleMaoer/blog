@@ -1,0 +1,47 @@
+{% extends 'back/base_main.html' %}
+
+{% block js %}
+    <script type="text/javascript" src="/static/back/static/kindeditor/kindeditor-all.js"></script>
+    <script type="text/javascript" src="/static/back/static/kindeditor/lang/zh-CN.js"></script>
+    <script type="text/javascript">
+        KindEditor.ready(function(K) {
+                window.editor = K.create('#editor_id',{
+                    uploadJson:'/util/upload/kindeditor'
+                });
+        });
+    </script>
+
+{% endblock %}
+    <style>
+    .dataStatistic{width:400px;height:200px;border:1px solid #ccc;margin:0 auto;margin:10px;overflow:hidden}
+    #cylindrical{width:400px;height:200px;margin-top:-15px}
+    #line{width:400px;height:200px;margin-top:-15px}
+    #pie{width:400px;height:200px;margin-top:-15px}
+    </style>
+{% block content %}
+<section class="rt_wrap">
+
+    <div class="rt_content">
+        <div class="page_title">
+            <h2 class="fl">用户信息详情</h2>
+        </div>
+        <form action="" method="post" enctype="multipart/form-data">
+            <input type='hidden' name='csrfmiddlewaretoken' value='QuPi2QUuEhlKchGijsQULGJKUZO6bOJacZPtDzGnIfWv89lLhtnbVM2EVRxtAXCJ' />
+            <section>
+                <ul class="ulColumn2">
+                    <li>
+                        <span class="item_name" style="width:120px;"></span>
+                        <label style="display:inline-block;padding:15px;background:#f8f8f8;">
+                            <textarea id="editor_id" name="content" style="width:700px;"></textarea>
+                        </label>
+                    </li>
+                    <li>
+                        <span class="item_name" style="width:120px;"></span>
+                        <input type="submit" class="link_btn"/>
+                    </li>
+                </ul>
+            </section>
+        </form>
+    </div>
+</section>
+{% endblock %}
